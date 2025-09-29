@@ -68,5 +68,7 @@ Thumbs.db
 # Vercel
 .vercel
 
-# SQLite databases (optional - keep data.db for deployment)
-# data.db
+# Large CSV source files (not needed in repo - only data.db is needed)
+*.csv
+
+# Note: data.db IS included for deployment (32MB, within GitHub limits)

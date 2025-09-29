@@ -11,17 +11,19 @@ This project was created with generative AI assistance (Cascade) and reviewed/ed
 ```
 .
 ├── api/
-│   └── county_data.py      # FastAPI endpoint implementation
+│   ├── __init__.py          # Python package marker
+│   └── county_data.py       # FastAPI endpoint implementation
 ├── csv_to_sqlite.py         # Script to convert CSV to SQLite
-├── data.db                  # SQLite database (generated)
-├── county_health_rankings.csv
-├── zip_county.csv
+├── data.db                  # SQLite database (included in repo)
 ├── requirements.txt         # Python dependencies
-├── vercel.json             # Vercel deployment configuration
-├── link.txt                # Deployed API endpoint URL
+├── vercel.json              # Vercel deployment configuration
+├── link.txt                 # Deployed API endpoint URL
+├── test_api.sh              # API test script
 ├── .gitignore
 └── README.md
 ```
+
+**Note:** CSV source files (`county_health_rankings.csv`, `zip_county.csv`) are NOT included in the git repository due to their large size (30MB total). Only the generated `data.db` (32MB) is included, which is needed for deployment.
 
 ## Part 1: Data Processing
 
