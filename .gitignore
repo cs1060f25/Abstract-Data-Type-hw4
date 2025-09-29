@@ -68,7 +68,5 @@ Thumbs.db
 # Vercel
 .vercel
 
-# Large CSV source files (not needed in repo - only data.db is needed)
-*.csv
-
+# Note: CSV files are tracked with Git LFS
 # Note: data.db IS included for deployment (32MB, within GitHub limits)
