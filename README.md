@@ -23,7 +23,7 @@ This project was created with generative AI assistance (Cascade) and reviewed/ed
 └── README.md
 ```
 
-**Note:** CSV source files (`county_health_rankings.csv`, `zip_county.csv`) are NOT included in the git repository due to their large size (30MB total). Only the generated `data.db` (32MB) is included, which is needed for deployment.
+**Note:** CSV source files (`county_health_rankings.csv`, `zip_county.csv`) are tracked using **Git LFS** (Large File Storage) due to their large size (30MB total). The generated `data.db` (32MB) is also included for deployment.
 
 ## Part 1: Data Processing
 
