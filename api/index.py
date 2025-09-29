@@ -121,7 +121,8 @@ class handler(BaseHTTPRequestHandler):
         """Handle POST requests"""
         parsed_path = urlparse(self.path)
         
-        if parsed_path.path != "/api/county_data":
+        # Accept POST to both /api and /api/county_data
+        if parsed_path.path not in ["/api", "/api/", "/api/county_data"]:
             self.send_response(404)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
