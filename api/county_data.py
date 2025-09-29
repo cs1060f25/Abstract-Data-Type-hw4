@@ -187,4 +187,5 @@ async def root():
 
 
 # For Vercel serverless deployment
-handler = app
+from mangum import Mangum
+handler = Mangum(app)
