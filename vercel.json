@@ -1,8 +1,7 @@
 {
-  "builds": [
-    {
-      "src": "api/county_data.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.9"
     }
-  ]
+  }
 }
