@@ -1,8 +1,22 @@
 {
   "builds": [
     {
-      "src": "api/*.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "api/county_data.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/county_data",
+      "dest": "/api/county_data.py"
+    },
+    {
+      "src": "/api",
+      "dest": "/api/index.py"
     }
   ]
 }
