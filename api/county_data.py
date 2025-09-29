@@ -22,8 +22,19 @@ VALID_MEASURES = {
 
 def get_db_path() -> str:
     """Get the path to the SQLite database"""
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_dir, "data.db")
+    # Try multiple possible locations in Vercel's filesystem
+    possible_paths = [
+        "/var/task/data.db",  # Vercel's deployment path
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data.db"),
+        "data.db",
+    ]
+    
+    for path in possible_paths:
+        if os.path.exists(path):
+            return path
+    
+    # If not found, return the most likely path for error message
+    return possible_paths[0]
 
 def dict_factory(cursor: sqlite3.Cursor, row: tuple) -> Dict[str, Any]:
     """Convert SQLite row to dictionary with lowercase keys"""
